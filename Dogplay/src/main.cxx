@@ -9,7 +9,7 @@ const int arrowsSpeed = 10;
 const int numberOfBombs = 12;
 const int minScore = -3;
 const unsigned int bombsDuration = 3; // in seconds
-unsigned int bombsDigits = numberOfBombs ? (unsigned int)std::log(numberOfBombs) + 1 : 1;
+unsigned int bombsDigits = numberOfBombs ? (unsigned int)std::log10(numberOfBombs) + 1 : 1;
 sf::Vector2f generateRandomPosition(sf::Sprite const& sprite, sf::Vector2u const& windowDimensions){
     unsigned int width = sprite.getGlobalBounds().width;
     unsigned int height = sprite.getGlobalBounds().height;
@@ -161,7 +161,7 @@ int main(){
             );
             loose = true;
         } else {
-            char scoreString[(score ? (unsigned int)std::log(score) + 1 : 1) + 7];
+            char scoreString[(score ? (unsigned int)std::log10(score) + 1 : 1) + 7];
             sprintf(scoreString, "score:%d", score);
             scoreDisplay.setString(scoreString);
         }
