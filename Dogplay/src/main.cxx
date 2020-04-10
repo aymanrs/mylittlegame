@@ -161,7 +161,7 @@ int main(){
             );
             loose = true;
         } else {
-            char scoreString[score ? (unsigned int)std::log(score) + 1 : 1];
+            char scoreString[(score ? (unsigned int)std::log(score) + 1 : 1) + 7];
             sprintf(scoreString, "score:%d", score);
             scoreDisplay.setString(scoreString);
         }
